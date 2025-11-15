@@ -1,3 +1,11 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/ping')
+async def ping():
+    return {'status': 'ok'}
+
 from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks, Body
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
